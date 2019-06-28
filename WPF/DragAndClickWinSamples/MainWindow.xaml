@@ -1,0 +1,33 @@
+﻿<Window x:Class="DragAndClickWinSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DragAndClickWinSamples"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="250"
+        WindowStyle="None"
+        Width="80">
+    <Grid Background="Black"
+          PreviewMouseLeftButtonDown="TestGrid_OnPreviewMouseLeftButtonDown"
+          PreviewMouseMove="TestGrid_OnPreviewMouseMove"
+          PreviewMouseLeftButtonUp="TestGrid_OnPreviewMouseLeftButtonUp">
+        <StackPanel Orientation="Vertical">
+            <Button Content="Hello"
+                    Background="Aqua"
+                    Click="ButtonBase_OnClick">
+            </Button>
+
+            <CheckBox Content="Checkbox1"
+                      Foreground="Red"
+                      Background="Red">
+            </CheckBox>
+
+            <RadioButton Content="RadioButton1"
+                         Background="Aqua"
+                         Foreground="Red">
+            </RadioButton>
+        </StackPanel>
+    </Grid>
+</Window>

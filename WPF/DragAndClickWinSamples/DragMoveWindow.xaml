@@ -1,0 +1,36 @@
+﻿<Window x:Class="DragAndClickWinSamples.DragMoveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:DragAndClickWinSamples"
+        xmlns:behavior="clr-namespace:DragAndClickWinSamples.Behaviors"
+        mc:Ignorable="d"
+        Title="DragMoveWindow"
+        Height="250"
+        WindowStyle="None"
+        Width="80"
+        Background="Aqua">
+    <i:Interaction.Behaviors>
+        <behavior:WinDragMoveBehavior></behavior:WinDragMoveBehavior>
+    </i:Interaction.Behaviors>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button Content="Hello"
+                    Background="Aqua"
+                    Click="Button_Click">
+            </Button>
+
+            <CheckBox Content="Checkbox1"
+                      Foreground="Red"
+                      Background="Red">
+            </CheckBox>
+
+            <RadioButton Content="RadioButton1"
+                         Background="Aqua"
+                         Foreground="Red">
+            </RadioButton>
+        </StackPanel>
+    </Grid>
+</Window>
