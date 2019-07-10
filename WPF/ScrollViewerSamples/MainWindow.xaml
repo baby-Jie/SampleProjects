@@ -1,0 +1,54 @@
+﻿<Window x:Class="ScrollViewerSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScrollViewerSamples"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="400"
+        Width="800"
+        Loaded="MainWindow_OnLoaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <ListBox x:Name="NavigationListBox" PreviewMouseLeftButtonDown="NavigationListBox_OnPreviewMouseLeftButtonDown">
+                <ListBoxItem   x:Name="ListBoxItem1">Red</ListBoxItem>
+                <ListBoxItem  x:Name="ListBoxItem2">Green</ListBoxItem>
+                <ListBoxItem  x:Name="ListBoxItem3">Blue</ListBoxItem>
+                <ListBoxItem  x:Name="ListBoxItem4">Yellow</ListBoxItem>
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <ScrollViewer x:Name="ScrollViewer1"
+                          ScrollChanged="ScrollViewer1_OnScrollChanged">
+                <StackPanel>
+                    <Rectangle x:Name="Rect1"
+                               Height="200"
+                               Fill="Red">
+                    </Rectangle>
+
+                    <Rectangle x:Name="Rect2"
+                               Height="200"
+                               Fill="Green">
+                    </Rectangle>
+
+                    <Rectangle x:Name="Rect3"
+                               Height="200"
+                               Fill="Blue">
+                    </Rectangle>
+
+                    <Rectangle x:Name="Rect4"
+                               Height="400"
+                               Fill="Yellow">
+                    </Rectangle>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
