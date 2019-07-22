@@ -32,6 +32,15 @@
                     Content="Only Record Audio"
                     Click="RecordAudioBtn_OnClick">
             </Button>
+
+            <Button x:Name="SetLogTextBtn"
+                    Content="Set Log Text"
+                    Click="SetLogTextBtn_OnClick">
+            </Button>
+
+            <Button x:Name="ShowFontDialogBtn"
+                    Content="Show Font Dialog"
+                    Click="ShowFontDialogBtn_OnClick "></Button>
         </StackPanel>
     </Grid>
 </Window>

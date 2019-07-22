@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrollViewerSamples", "Scro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenRecorderDemo", "ScreenRecorderDemo\ScreenRecorderDemo.csproj", "{A01D9F94-F0CA-49DE-84FB-7E2A73080217}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRunApplication", "AutoRunApplication\AutoRunApplication.csproj", "{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagnifierSamples", "MagnifierSamples\MagnifierSamples.csproj", "{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,22 @@ Global
 		{A01D9F94-F0CA-49DE-84FB-7E2A73080217}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A01D9F94-F0CA-49DE-84FB-7E2A73080217}.Release|x86.ActiveCfg = Release|x86
 		{A01D9F94-F0CA-49DE-84FB-7E2A73080217}.Release|x86.Build.0 = Release|x86
+		{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}.Debug|x86.Build.0 = Debug|Any CPU
+		{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}.Release|x86.ActiveCfg = Release|Any CPU
+		{23B0EE58-9C79-4BD4-8376-C1DB490C44D1}.Release|x86.Build.0 = Release|Any CPU
+		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Debug|x86.Build.0 = Debug|Any CPU
+		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Release|x86.ActiveCfg = Release|Any CPU
+		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

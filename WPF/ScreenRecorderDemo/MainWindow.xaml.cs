@@ -7,11 +7,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZDSoft;
 
 namespace ScreenRecorderDemo
 {
@@ -48,6 +50,30 @@ namespace ScreenRecorderDemo
         private void RecordAudioBtn_OnClick(object sender, RoutedEventArgs e)
         {
             ScnLibHelper.RecordAudio();
+        }
+
+        private void SetLogTextBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            //ScnLibHelper.SetLogText("我的一家");
+        }
+
+        private void ShowFontDialogBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            FontDialog dialog = new FontDialog();
+            dialog.ShowColor = true;
+            var ret = dialog.ShowDialog();
+
+            if (ret == System.Windows.Forms.DialogResult.OK)
+            {
+                var color = dialog.Color;
+
+                var font = dialog.Font;
+
+                ScnLibHelper.SetLogText("我的一家", font, color);
+
+            }
+
+           
         }
     }
 }

@@ -43,6 +43,14 @@
                                Fill="Blue">
                     </Rectangle>
 
+                    <RadioButton x:Name="TestRadioBtn"
+                                 Content="Test">
+                    </RadioButton>
+
+                    <RadioButton x:Name="TestRadioBtn2"
+                                 Content="Test2">
+                    </RadioButton>
+
                     <Rectangle x:Name="Rect4"
                                Height="400"
                                Fill="Yellow">

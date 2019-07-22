@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using ZDSoft;
 
 namespace ScreenRecorderDemo
 {
@@ -88,6 +91,23 @@ namespace ScreenRecorderDemo
             StringBuilder sb = new StringBuilder(1025);
             ZDSoft.SDK.ScnLib_GetAudioPathW(sb, true);
             return sb.ToString();
+        }
+
+        public static void SetLogText(string text, Font font, Color color)
+        {
+            LOGFONT logFont = new LOGFONT();
+            font.ToLogFont(logFont);
+
+            uint uintColor = 0;
+            uintColor = uintColor | color.B;
+            uintColor = uintColor << 8;
+
+            uintColor = uintColor | color.G;
+            uintColor = uintColor << 8;
+
+            uintColor = uintColor | color.R;
+
+            ZDSoft.SDK.ScnLib_SetLogoTextW(text, logFont, uintColor, false);
         }
     }
 }
