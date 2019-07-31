@@ -15,6 +15,8 @@ namespace DataStructorSamples.Models
 
         public BinaryTreeNode right = null;
 
+        public int Height => GetHeight(this);
+
         public BinaryTreeNode()
         {
 
@@ -136,7 +138,7 @@ namespace DataStructorSamples.Models
 
         #region Add Node
 
-        public void AddNode(int val)
+        public virtual void AddNode(int val)
         {
             AddNode(this, val);
         }
@@ -254,5 +256,15 @@ namespace DataStructorSamples.Models
         #endregion MiddleTraverse	
 
         #endregion Tranverse	
+
+        public int GetHeight(BinaryTreeNode node)
+        {
+            if (node == null)
+            {
+                return 0;
+            }
+
+            return Math.Max(GetHeight(node.left), GetHeight(node.right));
+        }
     }
 }
