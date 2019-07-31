@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRunApplication", "AutoR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagnifierSamples", "MagnifierSamples\MagnifierSamples.csproj", "{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructorSamples", "DataStructorSamples\DataStructorSamples.csproj", "{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,14 @@ Global
 		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Release|x86.ActiveCfg = Release|Any CPU
 		{65B1C49A-EC62-4715-ADD5-7D5CB50A4514}.Release|x86.Build.0 = Release|Any CPU
+		{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}.Debug|x86.Build.0 = Debug|Any CPU
+		{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}.Release|x86.ActiveCfg = Release|Any CPU
+		{1DCC6048-B9C5-4426-9B5F-DF63518F76BD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

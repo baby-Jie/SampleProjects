@@ -12,6 +12,11 @@
                     Content="二叉搜索树"
                     Click="TestBinarySerachTreeBtn_OnClick">
             </Button>
+
+            <Button x:Name="TestAVLTreeBtn"
+                    Content="AVL"
+                    Click="TestAVLTreeBtn_OnClick">
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommonTools\TreeUtil.cs" />
+    <Compile Include="Models\AVLTree.cs" />
+    <Compile Include="Models\AVLTreeNode.cs" />
+    <Compile Include="Models\Tree.cs" />
     <Compile Include="TreeSamples.xaml.cs">
       <DependentUpon>TreeSamples.xaml</DependentUpon>
     </Compile>

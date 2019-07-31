@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DataStructorSamples.CommonTools;
 using DataStructorSamples.Models;
 
 namespace DataStructorSamples
@@ -81,6 +82,37 @@ namespace DataStructorSamples
 
         #endregion 二叉搜索树	
 
+        #region AVL
+
+        private void TestAVLTreeBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            Tree tree = new AVLTree(1);
+            tree = tree.InsertNode(tree, 2);
+            tree = tree.InsertNode(tree, 3);
+            tree = tree.InsertNode(tree, 4);
+            tree = tree.InsertNode(tree, 5);
+            tree = tree.InsertNode(tree, 6);
+            tree = tree.InsertNode(tree, 7);
+            tree = tree.InsertNode(tree, 8);
+            tree = tree.InsertNode(tree, 9);
+            tree = tree.InsertNode(tree, 10);
+            tree = tree.InsertNode(tree, 11);
+            tree = tree.InsertNode(tree, 12);
+            tree = tree.InsertNode(tree, 13);
+            tree = tree.InsertNode(tree, 14);
+            tree = tree.InsertNode(tree, 15);
+
+            Console.WriteLine("Pre---");
+            TreeUtil.PreTraverse(tree);
+
+            Console.WriteLine("Middle---");
+            TreeUtil.MiddleTraverse(tree);
+
+            Console.WriteLine("After---");
+            TreeUtil.AfterTraverse(tree);
+        }
+
+        #endregion AVL	
 
     }
 }

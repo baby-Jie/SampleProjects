@@ -28,6 +28,6 @@ namespace DataStructorSamples.Models
 
         #endregion 计算树的高度	
 
-        public abstract Tree InsertNode(Tree node, int val);
+        public abstract Tree InsertNode(Tree root, int val);
     }
 }
