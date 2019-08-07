@@ -1,0 +1,25 @@
+﻿<Window x:Class="WorkTools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkTools"
+        Style="{StaticResource Style.Window.Universal}"
+        Background="#279EDA"
+        xmlns:themes="clr-namespace:SharedResources.Themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+
+    <themes:UniversalWindowStyle.TitleBar>
+        <themes:UniversalTitleBar ForegroundColor="White"
+                                  InactiveForegroundColor="#7FFFFFFF"
+                                  ButtonHoverForeground="White"
+                                  ButtonHoverBackground="#3FFFFFFF"
+                                  ButtonPressedForeground="#7FFFFFFF"
+                                  ButtonPressedBackground="#3F000000" />
+    </themes:UniversalWindowStyle.TitleBar>
+
+    <Grid>
+        
+    </Grid>
+</Window>

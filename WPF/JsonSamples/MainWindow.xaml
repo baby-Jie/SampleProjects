@@ -1,0 +1,53 @@
+﻿<Window x:Class="JsonSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JsonSamples"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+    <Grid>
+
+        <StackPanel Margin="20">
+            <StackPanel Margin="20">
+                <Button x:Name="JsonSerializeOptOutBtn"
+                        Content="Json Serialize OptIn"
+                        Click="JsonSerializeOptOutBtn_OnClick">
+                </Button>
+
+                <Button x:Name="JsonDeserializeOptInBtn"
+                        Content="Json Deserialize Fields"
+                        Click="JsonDeserializeOptInBtn_OnClick">
+                </Button>
+            </StackPanel>
+
+            <StackPanel Margin="20">
+                <Button x:Name="JsonSerializeOptInBtn"
+                        Content="Json Serialize OptIn"
+                        Click="JsonSerializeOptInBtn_OnClick">
+                </Button>
+
+                <Button x:Name="JsonDeserilizeOptInBtn"
+                        Content="Json Deserilize OptIn"
+                        Click="JsonDeserilizeOptInBtn_OnClick">
+                </Button>
+            </StackPanel>
+
+            <StackPanel Margin="20">
+                <Button x:Name="CustomJsonWriterBtn"
+                        Content="Custom Json"
+                        Click="CustomJsonWriterBtn_OnClick">
+                </Button>
+            </StackPanel>
+
+            <StackPanel Margin="20">
+                <Button x:Name="ListJsonSerializationBtn"
+                        Content="ListJson"
+                        Click="LitJsonSerializationBtn_OnClick">
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
