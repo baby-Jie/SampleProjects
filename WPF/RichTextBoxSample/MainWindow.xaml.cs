@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -61,6 +62,8 @@ namespace RichTextBoxSample
 
                     RectangleF rectangleF = new RectangleF(4.1f, 12, (float)width, (float)height);
 
+                    Rectangle rect = new Rectangle(4 , 12, (int)width, (int)height);
+
                     GraphicsContainer gc = g.BeginContainer();
 
                     try
@@ -68,20 +71,54 @@ namespace RichTextBoxSample
                         g.SmoothingMode = SmoothingMode.HighQuality;
                         g.PixelOffsetMode = PixelOffsetMode.Default; // PixelOffsetMode.HighQuality 在插入带有文字的图片变模糊
                         g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+
+                        var stringFormat = StringFormat.GenericTypographic;
+
+                        if (fontStyle == System.Drawing.FontStyle.Bold && fontStyle != System.Drawing.FontStyle.Italic)
+                        {
+                            stringFormat.FormatFlags = StringFormatFlags.LineLimit;
+                        }
+
                         if (fontStyle == (System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))
                         {
                             // 如果是斜体加上粗体 那么 选择 SingleBitPerPixelGridFit 模式
                             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
+
+                            stringFormat.FormatFlags = StringFormatFlags.FitBlackBox | StringFormatFlags.LineLimit |
+                                                       StringFormatFlags.NoClip;
                         }
                         else
                         {
+                            //g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
                             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
                         }
+
                         g.CompositingMode = CompositingMode.SourceOver;
                         g.CompositingQuality = CompositingQuality.HighQuality;
 
+                        //g.DrawString(content, font, System.Drawing.Brushes.Red, rectangleF,
+                        //    StringFormat.GenericTypographic);
+
+                        //StringFormat drawFormat = new StringFormat();
+                        //drawFormat.FormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.FitBlackBox | StringFormatFlags.NoClip ;
+                        //drawFormat.Trimming = StringTrimming.None;
+
+                        //var test = StringFormat.GenericTypographic;
+                        //test.FormatFlags = StringFormatFlags.NoClip;
+                        //Console.WriteLine(test.FormatFlags);
+
                         g.DrawString(content, font, System.Drawing.Brushes.Red, rectangleF,
-                            StringFormat.GenericTypographic);
+                            stringFormat);
+                        //TextFormatFlags flags = TextFormatFlags.WordBreak;
+                        //TextRenderer.DrawText(g, content, font, rect, System.Drawing.Color.Blue, flags);
+                        //g.DrawRectangle(Pens.Black, Rectangle.Round(rect));
+
+                        //g.DrawString(content, font, System.Drawing.Brushes.Green, rectangleF,
+                        //    drawFormat);
+
+                        //g.DrawString(content, font, System.Drawing.Brushes.Red, 4.1f, 12,
+                        //    StringFormat.GenericTypographic);
 
                     }
                     catch (Exception e)
@@ -200,6 +237,11 @@ namespace RichTextBoxSample
             return bitmapSource;
         }
 
+        public void GraphicsTest()
+        {
+
+        }
+
         #endregion Private Methods	
 
         #region Native Methods
@@ -268,6 +310,17 @@ namespace RichTextBoxSample
             //SaveRichTextAsImage(RichTextEditor, EditorDocument);
         }
 
+        /// <summary>
+        /// Graphics的测试使用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GraphicsTestBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            GraphicsTest();
+        }
+
         #endregion EventHandlers
+
     }
 }

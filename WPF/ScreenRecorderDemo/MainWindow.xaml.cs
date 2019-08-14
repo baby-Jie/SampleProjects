@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ZDSoft;
+using MessageBox = System.Windows.MessageBox;
+using RecordLibHelper = ZDSoft.SDK;
 
 namespace ScreenRecorderDemo
 {
@@ -72,8 +74,18 @@ namespace ScreenRecorderDemo
                 ScnLibHelper.SetLogText("我的一家", font, color);
 
             }
+        }
 
-           
+        private void CursorRelationBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            RecordLibHelper.ScnLib_RecordCursor(false);
+            RecordLibHelper.ScnLib_AddCursorEffects(true, true, true, true);
+
+            //RecordLibHelper.ScnLib_SetCursorOriginalSize(true)
+            //ScnLibHelper
+            //bool flag = RecordLibHelper.ScnLib_IsCursorOriginalSize();
+
+            //MessageBox.Show(flag.ToString());
         }
     }
 }

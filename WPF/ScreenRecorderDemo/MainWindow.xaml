@@ -40,7 +40,13 @@
 
             <Button x:Name="ShowFontDialogBtn"
                     Content="Show Font Dialog"
-                    Click="ShowFontDialogBtn_OnClick "></Button>
+                    Click="ShowFontDialogBtn_OnClick ">
+            </Button>
+
+            <Button x:Name="CursorRelationBtn"
+                    Content="Cursor Relation"
+                    Click="CursorRelationBtn_OnClick">
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

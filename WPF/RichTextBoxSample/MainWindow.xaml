@@ -44,6 +44,11 @@
                         x:Name="SaveImageBtn"
                         Click="SaveImageBtn_OnClick">
                 </Button>
+
+                <Button Content="Graphics Test"
+                        x:Name="GraphicsTestBtn"
+                        Click="GraphicsTestBtn_OnClick">
+                </Button>
             </StackPanel>
         </Grid>
 
@@ -62,7 +67,7 @@
                               TextOptions.TextFormattingMode="Display"
                               x:Name="EditorDocument">
                     <Paragraph>
-                        <Run>HELLOHELLOHELL</Run>
+                        <Run>HELLOHELLOHELLOHELLOHELLO</Run>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
