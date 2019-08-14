@@ -58,6 +58,7 @@
     <Compile Include="CommonTools\TreeUtil.cs" />
     <Compile Include="Models\AVLTree.cs" />
     <Compile Include="Models\AVLTreeNode.cs" />
+    <Compile Include="Models\Heaps\MinHeap.cs" />
     <Compile Include="Models\Tree.cs" />
     <Compile Include="TreeSamples.xaml.cs">
       <DependentUpon>TreeSamples.xaml</DependentUpon>
