@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AdvancedInkcanvas.CommonTools;
+using AdvancedInkcanvas.Models;
 
 namespace AdvancedInkcanvas
 {
@@ -20,19 +22,58 @@ namespace AdvancedInkcanvas
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Constructors
+
         public MainWindow()
         {
             InitializeComponent();
+
+            CustomInitialize();
         }
 
-        private void SelectMode_OnClick(object sender, RoutedEventArgs e)
+        #endregion Constructors
+
+        #region  Fields
+        #endregion Fields
+
+        #region Properties
+        #endregion Properties
+
+        #region Methods
+        #endregion Methods
+
+        #region EventHandlers
+
+        #region Windows
+        #endregion Windows
+
+        #endregion EventHandlers
+
+        #region Classfied
+
+        #region Initializations and Disopose 
+
+        private void CustomInitialize()
         {
-            CustomInkCanvas.EditingMode = InkCanvasEditingMode.Select;
+            RegisterMessage();
         }
 
-        private void NoneModeBtn_OnClick(object sender, RoutedEventArgs e)
+        #endregion Initializations	
+
+        #region 注册消息
+
+        private void RegisterMessage()
         {
-            CustomInkCanvas.EditingMode = InkCanvasEditingMode.None;
+            AppUtil.RegisterEvents<InkMode>(this, AppConsts.MSG_SwitchInkMode, SwitchInkMode);
         }
+
+        public void SwitchInkMode(InkMode mode)
+        {
+            CustomInkCanvas.SwitchInkMode(mode);
+        }
+
+        #endregion 注册消息	
+
+        #endregion
     }
 }

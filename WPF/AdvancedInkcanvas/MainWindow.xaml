@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow"
         Height="450"
-        Width="800">
+        Width="800"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
@@ -15,17 +16,19 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-            <Button x:Name="NoneModeBtn"
-                    Content="None"
-                    Click="NoneModeBtn_OnClick"></Button>
-            <Button x:Name="SelectMode"
-                    Content="Select"
-                    Click="SelectMode_OnClick">
-            </Button>
+            <ComboBox x:Name="InkcanvasModeComBox"
+                      ItemsSource="{Binding InkModeSets}"
+                      SelectedItem="{Binding SelectedInkMode}"
+                      Width="100">
+            </ComboBox>
         </StackPanel>
 
         <Grid Grid.Row="1">
-            <local:CustomRenderingInkCanvas x:Name="CustomInkCanvas"></local:CustomRenderingInkCanvas>
+            <local:CustomRenderingInkCanvas x:Name="CustomInkCanvas"
+                                            Cursor="Hand"
+                                            UseCustomCursor="True">
+            </local:CustomRenderingInkCanvas>
+            <!--<InkCanvas x:Name="CustomInkCanvas" Cursor="Hand" UseCustomCursor="True"></InkCanvas>-->
         </Grid>
     </Grid>
 </Window>

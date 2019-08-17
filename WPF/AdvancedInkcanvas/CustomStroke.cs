@@ -1,7 +1,5 @@
-﻿using System;
-using System.Windows.Media;
+﻿using System.Windows.Media;
 using System.Windows;
-using System.Windows.Input.StylusPlugIns;
 using System.Windows.Input;
 using System.Windows.Ink;
 
@@ -16,7 +14,6 @@ namespace AdvancedInkcanvas
         public CustomStroke(StylusPointCollection stylusPoints)
             : base(stylusPoints)
         {
-            // Create the Brush and Pen used for drawing.
             brush = new LinearGradientBrush(Colors.Red, Colors.Blue, 20d);
             pen = new Pen(brush, 2d);
         }
@@ -24,8 +21,12 @@ namespace AdvancedInkcanvas
         protected override void DrawCore(DrawingContext drawingContext,
                                          DrawingAttributes drawingAttributes)
         {
-
             drawingContext.DrawRectangle(brush, pen, new Rect((Point)StylusPoints[0], (Point)StylusPoints[StylusPoints.Count-1]));
+
+            //StylusPointCollection collection = new StylusPointCollection();
+            //collection.Add(StylusPoints[0]);
+            //collection.Add(StylusPoints[StylusPoints.Count - 1]);
+            //this.StylusPoints = collection;
 
             return;
             // Allocate memory to store the previous point to draw from.

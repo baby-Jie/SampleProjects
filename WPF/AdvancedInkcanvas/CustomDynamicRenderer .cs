@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows.Media;
 using System.Windows;
 using System.Windows.Input.StylusPlugIns;
 using System.Windows.Input;
-using System.Windows.Ink;
 
 namespace AdvancedInkcanvas
 {
@@ -20,6 +20,8 @@ namespace AdvancedInkcanvas
 
         private Point _downPoint;
 
+        private bool _isFirst = true;
+
 
         protected override void OnStylusDown(RawStylusInput rawStylusInput)
         {
@@ -27,7 +29,6 @@ namespace AdvancedInkcanvas
             var stylusPoints = rawStylusInput.GetStylusPoints();
 
             _downPoint = (Point)stylusPoints[0];
-            // Allocate memory to store the previous point to draw from.
             prevPoint = new Point(double.NegativeInfinity, double.NegativeInfinity);
             base.OnStylusDown(rawStylusInput);
         }
@@ -36,40 +37,49 @@ namespace AdvancedInkcanvas
                                        StylusPointCollection stylusPoints,
                                        Geometry geometry, Brush fillBrush)
         {
-            // Create a new Brush, if necessary.
+            var type = typeof(DynamicRenderer);
+            var fieldInfo = type.GetField("_strokeInfoList", BindingFlags.NonPublic | BindingFlags.Instance);
+            
+            var strokeInfoList = fieldInfo.GetValue(this);
+            var strokeInfoListType = strokeInfoList.GetType();
+            var getItemMethodInfo = strokeInfoListType.GetMethod("get_Item");
+            var si = getItemMethodInfo.Invoke(strokeInfoList, new Object[] {0});
+
+            var siType = si.GetType();
+
+            var strokeCVPropertyInfo = siType.GetProperty("StrokeCV");
+
+            var strokeCV = strokeCVPropertyInfo.GetValue(si);
+
+
+            if (strokeCV is ContainerVisual visual)
+            {
+                visual.Children.Clear();
+            }
+           
+            var element = this.Element;
+
+
             if (brush == null)
             {
                 brush = new LinearGradientBrush(Colors.Red, Colors.Blue, 20d);
             }
 
-            // Create a new Pen, if necessary.
             if (pen == null)
             {
                 pen = new Pen(brush, 2d);
             }
 
+
             drawingContext.DrawRectangle(brush, pen, new Rect(_downPoint, (Point)stylusPoints[stylusPoints.Count - 1]));
+        }
+    }
 
-            return;
-            // Draw linear gradient ellipses between 
-            // all the StylusPoints that have come in.
-            for (int i = 0; i < stylusPoints.Count; i++)
-            {
-                Point pt = (Point)stylusPoints[i];
-                Vector v = Point.Subtract(prevPoint, pt);
-
-                // Only draw if we are at least 4 units away 
-                // from the end of the last ellipse. Otherwise, 
-                // we're just redrawing and wasting cycles.
-                if (v.Length > 4)
-                {
-                    // Set the thickness of the stroke based 
-                    // on how hard the user pressed.
-                    double radius = stylusPoints[i].PressureFactor * 10d;
-                    drawingContext.DrawEllipse(brush, pen, pt, radius, radius);
-                    prevPoint = pt;
-                }
-            }
+    public class Person
+    {
+        public string this[int index]
+        {
+            get { return "111"; }
         }
     }
 }
