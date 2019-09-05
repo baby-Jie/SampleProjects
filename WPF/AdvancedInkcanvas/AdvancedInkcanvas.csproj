@@ -70,8 +70,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommonTools\AppConfig.cs" />
     <Compile Include="CommonTools\AppConsts.cs" />
     <Compile Include="CommonTools\AppUtil.cs" />
+    <Compile Include="Renders\DynamicRendererBase.cs" />
+    <Compile Include="Renders\RectangleDynamicRenderer.cs" />
+    <Compile Include="Renders\SelectDynamicRenderer.cs" />
+    <Compile Include="Strokes\CustomStrokeBase.cs" />
+    <Compile Include="Strokes\RectangleStroke.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
@@ -82,9 +88,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CustomDynamicRenderer .cs" />
-    <Compile Include="CustomRenderingInkCanvas .cs" />
-    <Compile Include="CustomStroke.cs" />
+    <Compile Include="Controls\CustomRenderingInkCanvas .cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -119,8 +123,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Renders\" />
-    <Folder Include="Strokes\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

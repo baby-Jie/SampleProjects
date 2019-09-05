@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTools", "TemplateProjec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSamples", "JsonSamples\JsonSamples.csproj", "{F7BB6210-CF86-4CE1-93D2-38FF07DB0246}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketSamples", "WebSocketSamples\WebSocketSamples.csproj", "{6B579F73-605B-47EB-9C56-ACDA77946D6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,14 @@ Global
 		{F7BB6210-CF86-4CE1-93D2-38FF07DB0246}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F7BB6210-CF86-4CE1-93D2-38FF07DB0246}.Release|x86.ActiveCfg = Release|Any CPU
 		{F7BB6210-CF86-4CE1-93D2-38FF07DB0246}.Release|x86.Build.0 = Release|Any CPU
+		{6B579F73-605B-47EB-9C56-ACDA77946D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B579F73-605B-47EB-9C56-ACDA77946D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B579F73-605B-47EB-9C56-ACDA77946D6E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6B579F73-605B-47EB-9C56-ACDA77946D6E}.Debug|x86.Build.0 = Debug|Any CPU
+		{6B579F73-605B-47EB-9C56-ACDA77946D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B579F73-605B-47EB-9C56-ACDA77946D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B579F73-605B-47EB-9C56-ACDA77946D6E}.Release|x86.ActiveCfg = Release|Any CPU
+		{6B579F73-605B-47EB-9C56-ACDA77946D6E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

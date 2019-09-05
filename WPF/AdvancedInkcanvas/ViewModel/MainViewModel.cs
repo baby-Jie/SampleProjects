@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Windows.Navigation;
 using AdvancedInkcanvas.CommonTools;
 using AdvancedInkcanvas.Models;
 using GalaSoft.MvvmLight;
@@ -13,7 +12,7 @@ namespace AdvancedInkcanvas.ViewModel
 
         public MainViewModel()
         {
-            InitializeViewModel();
+            CustomInitialization();
         }
 
         #endregion Constructors
@@ -31,20 +30,16 @@ namespace AdvancedInkcanvas.ViewModel
 
         #region EventHandlers
 
-        #region Windows
-        #endregion Windows
-
         #endregion EventHandlers
 
         #region Classified
 
         #region Initializations
 
-        private void InitializeViewModel()
+        private void CustomInitialization()
         {
-            var modes = Enum.GetValues(typeof(InkMode));
-            //_inkModeSets = new List<InkMode>(modes);
-           //var names = Enum.GetNames(typeof(InkMode));
+            InkMode mode = InkMode.Ink;
+            _inkModeSets = AppUtil.GetEnumSets(mode);
         }
 
         #endregion Initializations	
@@ -87,7 +82,6 @@ namespace AdvancedInkcanvas.ViewModel
         }
 
         #endregion ÇÐ»»InkÄ£Ê½	
-
 
         #endregion Ink Mode	Relations
 

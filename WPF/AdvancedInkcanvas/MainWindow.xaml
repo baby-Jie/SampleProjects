@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdvancedInkcanvas"
+        xmlns:controls="clr-namespace:AdvancedInkcanvas.Controls"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="450"
@@ -21,13 +22,23 @@
                       SelectedItem="{Binding SelectedInkMode}"
                       Width="100">
             </ComboBox>
+
+            <Button x:Name="ClearAllBtn"
+                    Content="Clear All"
+                    Click="ClearAllBtn_OnClick">
+            </Button>
+
+            <Button x:Name="TestSelectBtn"
+                    Content="TestSelect"
+                    Click="TestSelectBtn_OnClick">
+            </Button>
         </StackPanel>
 
         <Grid Grid.Row="1">
-            <local:CustomRenderingInkCanvas x:Name="CustomInkCanvas"
+            <controls:CustomRenderingInkCanvas x:Name="CustomInkCanvas"
                                             Cursor="Hand"
                                             UseCustomCursor="True">
-            </local:CustomRenderingInkCanvas>
+            </controls:CustomRenderingInkCanvas>
             <!--<InkCanvas x:Name="CustomInkCanvas" Cursor="Hand" UseCustomCursor="True"></InkCanvas>-->
         </Grid>
     </Grid>

@@ -160,6 +160,26 @@ namespace JsonSamples
             return result;
         }
 
+        /// <summary>
+        /// 获取字符串列表
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static List<string> GetStrList(JToken data, string key)
+        {
+            List<string> items = new List<string>();
+
+            var tokens = GetList(data, key);
+
+            foreach (var token in tokens)
+            {
+                items.Add(token.ToString());
+            }
+
+            return items;
+        }
+
         #region Get JsonData
 
         /// <summary>

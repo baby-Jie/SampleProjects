@@ -1,0 +1,65 @@
+﻿<Window x:Class="WebSocketSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkTools"
+        Style="{StaticResource Style.Window.Universal}"
+        Background="#279EDA"
+        xmlns:themes="clr-namespace:SharedResources.Themes"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        TextBlock.Foreground="White"
+        TextBlock.FontSize="16"
+        Height="450"
+        Width="600"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
+
+    <themes:UniversalWindowStyle.TitleBar>
+        <themes:UniversalTitleBar ForegroundColor="White"
+                                  InactiveForegroundColor="#7FFFFFFF"
+                                  ButtonHoverForeground="White"
+                                  ButtonHoverBackground="#3FFFFFFF"
+                                  ButtonPressedForeground="#7FFFFFFF"
+                                  ButtonPressedBackground="#3F000000" />
+    </themes:UniversalWindowStyle.TitleBar>
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="WebSocket Client"
+                       HorizontalAlignment="Center"></TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ws:">
+                </TextBlock>
+                <TextBox x:Name="ConnectServerUrl"
+                         Width="300">
+                </TextBox>
+                <Button x:Name="ConnectBtn"
+                        Content="Connect">
+                </Button>
+            </StackPanel>
+            <StackPanel>
+                <TextBox Height="150"></TextBox>
+            </StackPanel>
+
+            <TextBlock Text="WebSocket Server"></TextBlock>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ws:">
+                </TextBlock>
+                <TextBox x:Name="ServerUrlTBox"
+                         Text="{Binding ServerUrl}"
+                         Width="300">
+                </TextBox>
+                <Button x:Name="OpenServerBtn"
+                        Content="Open">
+                </Button>
+            </StackPanel>
+
+            <TextBox x:Name="ServerRecvTBox"
+                     Height="150"
+                     IsReadOnly="True">
+            </TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

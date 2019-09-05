@@ -40,6 +40,11 @@
                         Content="Custom Json"
                         Click="CustomJsonWriterBtn_OnClick">
                 </Button>
+
+                <Button x:Name="CustomGetListBtn"
+                        Content="Custom List Json"
+                        Click="CustomGetListBtn_OnClick">
+                </Button>
             </StackPanel>
 
             <StackPanel Margin="20">

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace JsonSamples
 {
@@ -20,12 +22,6 @@ namespace JsonSamples
         }
 
         #endregion Constructors
-
-        #region  Fields
-        #endregion Fields
-
-        #region Methods
-        #endregion Methods
 
         #region EventHandlers
 
@@ -114,9 +110,6 @@ namespace JsonSamples
 
         #endregion OptIN Mode	
 
-        #region Windows
-        #endregion Windows
-
         #endregion EventHandlers
 
         #region LitJson 序列化
@@ -173,6 +166,27 @@ namespace JsonSamples
             }
 
             Console.WriteLine(stringBuilder);
+        }
+
+        private void GetListJson(string json)
+        {
+            var jObject = JObject.Parse(json);
+
+            var ret = jObject["imgUrl"].Children().ToList<JToken>();
+
+            foreach (var item in ret)
+            {
+                var img = item.ToString();
+                Console.WriteLine(img);
+            }
+        }
+
+        private void CustomGetListBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            string json =
+                "{\"jiangpingType\":\"\",\"examId\":\"\",\"taskResultId\":\"\",\"taskId\":\"\",\"imgUrl\":[\"1.jpg\", \"2,jpg\"]}";
+
+            GetListJson(json);
         }
     }
 }
