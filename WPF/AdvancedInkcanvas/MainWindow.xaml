@@ -10,6 +10,31 @@
         Height="450"
         Width="800"
         DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
+    <Window.Resources>
+        <Style x:Key="CustomRenderingInkCanvasStyle1"
+               TargetType="{x:Type controls:CustomRenderingInkCanvas}">
+            <Setter Property="Background"
+                    Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+            <Setter Property="Stylus.IsFlicksEnabled"
+                    Value="False" />
+            <Setter Property="Stylus.IsTapFeedbackEnabled"
+                    Value="False" />
+            <Setter Property="Stylus.IsTouchFeedbackEnabled"
+                    Value="False" />
+            <Style.Triggers>
+                <Trigger Property="Width"
+                         Value="Auto">
+                    <Setter Property="MinWidth"
+                            Value="350" />
+                </Trigger>
+                <Trigger Property="Height"
+                         Value="Auto">
+                    <Setter Property="MinHeight"
+                            Value="250" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
@@ -36,8 +61,9 @@
 
         <Grid Grid.Row="1">
             <controls:CustomRenderingInkCanvas x:Name="CustomInkCanvas"
-                                            Cursor="Hand"
-                                            UseCustomCursor="True">
+                                               Cursor="Hand"
+                                               UseCustomCursor="True"
+                                               Style="{DynamicResource CustomRenderingInkCanvasStyle1}">
             </controls:CustomRenderingInkCanvas>
             <!--<InkCanvas x:Name="CustomInkCanvas" Cursor="Hand" UseCustomCursor="True"></InkCanvas>-->
         </Grid>

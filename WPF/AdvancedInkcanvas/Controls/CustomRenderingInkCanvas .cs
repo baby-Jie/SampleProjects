@@ -46,7 +46,8 @@ namespace AdvancedInkcanvas.Controls
             _dynamicRenderers.Add(_originalRenderer);
             _dynamicRenderers.Add(_originalRenderer);
             _dynamicRenderers.Add(_originalRenderer);
-            _dynamicRenderers.Add(new SelectDynamicRenderer());
+            _dynamicRenderers.Add(_originalRenderer);
+            //_dynamicRenderers.Add(new SelectDynamicRenderer());
             _dynamicRenderers.Add(_originalRenderer);
             _dynamicRenderers.Add(_originalRenderer);
             _dynamicRenderers.Add(new RectangleDynamicRenderer());
@@ -68,18 +69,20 @@ namespace AdvancedInkcanvas.Controls
                 {
                     this.EditingMode = editMode;
                 }
+
+                this.DynamicRenderer = _dynamicRenderers[(int)mode];
             }
             // 自定义的几个Mode 比如Rect、Circle
             else
             {
                 this.EditingMode = InkCanvasEditingMode.Ink;
+
+                if (mode == InkMode.Rectangle)
+                {
+                    this.DynamicRenderer = new RectangleDynamicRenderer();
+                }
             }
-
-            this.DynamicRenderer = null;
-
-            //this.DynamicRenderer = _dynamicRenderers[(int)mode];
         }
-
 
         #endregion Methods
 
@@ -87,17 +90,17 @@ namespace AdvancedInkcanvas.Controls
 
         protected override void OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)
         {
-            var point = e.GetPosition(this);
-            if (this.EditingMode == InkCanvasEditingMode.None)
-            {
-                var strokes = this.Strokes.Where(stroke => stroke is RectangleStroke && stroke.GetGeometry().Bounds.Contains(point));
+            //var point = e.GetPosition(this);
+            //if (this.EditingMode == InkCanvasEditingMode.None)
+            //{
+            //    var strokes = this.Strokes.Where(stroke => stroke is RectangleStroke && stroke.GetGeometry().Bounds.Contains(point));
 
-                if (strokes.Any())
-                {
-                    StrokeCollection collection = new StrokeCollection(strokes);
-                    this.Select(collection, null);
-                }
-            }
+            //    if (strokes.Any())
+            //    {
+            //        StrokeCollection collection = new StrokeCollection(strokes);
+            //        this.Select(collection, null);
+            //    }
+            //}
             base.OnPreviewMouseLeftButtonDown(e);
         }
 

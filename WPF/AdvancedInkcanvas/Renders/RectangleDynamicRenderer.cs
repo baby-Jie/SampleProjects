@@ -16,6 +16,7 @@ namespace AdvancedInkcanvas.Renders
             var visual = GetContainerVisual();
             visual?.Children.Clear();
             drawingContext.DrawRectangle(Pen.Brush, Pen, new Rect(_downPoint, (Point)stylusPoints[stylusPoints.Count - 1]));
+            Console.WriteLine($"downPoint:{_downPoint}, endpoint:{(Point)stylusPoints[stylusPoints.Count - 1]}");
         }
     }
 }
